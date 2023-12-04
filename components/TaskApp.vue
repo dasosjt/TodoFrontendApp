@@ -45,7 +45,7 @@ export default {
       }
 
       try {
-        const response = await fetch(`http://localhost:8080/api/task`, { method: 'POST',
+        const response = await fetch(`http://localhost:8080/api/v1/task/`, { method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
@@ -69,7 +69,7 @@ export default {
         item.status = checked
 
         try {
-          const response = await fetch(`http://localhost:8080/api/task/${id}`, { method: 'PUT',
+          const response = await fetch(`http://localhost:8080/api/v1/task/${id}`, { method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
             },
@@ -88,7 +88,7 @@ export default {
       console.log(id)
 
       try {
-        const response = await fetch(`http://localhost:8080/api/task/${id}`, { method: 'DELETE' })
+        const response = await fetch(`http://localhost:8080/api/v1/task/${id}`, { method: 'DELETE' })
       } catch (error) {
         console.error(error)
       }
@@ -103,7 +103,7 @@ export default {
 
     async loadItemList() {
       try {
-        const response = await fetch('http://localhost:8080/api/task/all')
+        const response = await fetch('http://localhost:8080/api/v1/task/all')
         this.itemList = await response.json()
       } catch (error) {
         console.error(error)
