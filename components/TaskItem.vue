@@ -8,16 +8,17 @@
           :checked="status">
         <label class="mr-3" :for="idComputed"></label>
         <span>
-          {{id}}
-          <b-card-header>
-            {{title}}
-          </b-card-header>
-          <b-card-body>
-            {{ content }}
-          </b-card-body>
-          <b-btn-close class="icon-delete" @click="onTaskDelete">
-            Delete
-          </b-btn-close>
+          <b-card>
+              <b-card-header>
+                {{id}} - {{title}}
+              </b-card-header>
+              <b-card-body>
+                {{ content }}
+              </b-card-body>
+              <b-btn class="danger" @click="onTaskDelete">
+                Delete
+              </b-btn>
+          </b-card>
         </span>
     </li>
 </template>
