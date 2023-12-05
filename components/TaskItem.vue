@@ -1,23 +1,26 @@
 <template>
 	<li class="list-item" :class="{ done: status }">
-        <input
-          type="checkbox"
-          class="checkbox"
-          :id="idComputed"
-          @change="onTaskStatusChange"
-          :checked="status">
-        <label class="mr-3" :for="idComputed"></label>
         <span>
           <b-card>
               <b-card-header>
                 {{id}} - {{title}}
               </b-card-header>
-              <b-card-body>
-                {{ content }}
+              <b-card-body class="text-right">
+                 <b-card-text>
+                  {{ content }}
+                 </b-card-text>
               </b-card-body>
-              <b-btn class="danger" @click="onTaskDelete">
+            <b-card-footer>
+              <input
+                type="checkbox"
+                class="checkbox"
+                :id="idComputed"
+                @change="onTaskStatusChange"
+                :checked="status">
+              <b-btn variant="danger" @click="onTaskDelete">
                 Delete
               </b-btn>
+            </b-card-footer>
           </b-card>
         </span>
     </li>
