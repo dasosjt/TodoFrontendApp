@@ -47,17 +47,16 @@ export default {
       try {
         const response = await fetch(`http://localhost:8080/api/v1/task/`, { method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify(task)
         })
 
-        let newTask = await response.json()
-
+        const newTask = await response.json()
         this.itemList.push(newTask)
 
       } catch (error) {
-        console.error(error);
+        console.error(error)
       }
     },
 
